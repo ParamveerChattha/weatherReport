@@ -41,13 +41,20 @@ getWeather = async (e) =>{
         return(
             <div>
        <Form getWeather={this.getWeather}/>
-<div class="card">
-<div class = "card-header">
-       <div class = "weather_tabs card-body">
+<div className="card">
+<div className = "card-header weather_tabs">
+        <ul>
+            {this.state.data.map(count =>(
+                <li key="count.dt_txt">
+                    <img src="⁨https://wi-images.condecdn.net/image/doEYpG6Xd87/crop/2040/f/weather.jpg" alt="weather image"/>
+                </li>
+            ))}
+        </ul>
+       <div className = "weather_tabs card-body">
             <ul>
             {this.state.data.map(item =>(
                 <li key="item.dt_txt">
-                Date: {(item.dt_txt).substring(0,10) } | Temp: {(item.main.temp -273.15).toFixed(2)}c | weather: {item.weather[0].description} 
+                Date: {(item.dt_txt).substring(0,10) }  Temp: {(item.main.temp -273.15).toFixed(2)} c  weather: {item.weather[0].description} 
                 </li>
 
             ))}
