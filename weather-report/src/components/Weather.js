@@ -6,9 +6,9 @@ class Weather extends React.Component{
 
 getWeather = async (e) =>{
     e.preventDefault();
-  const api_call = await  fetch(`http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${APIKEY}`);
+  const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${APIKEY}`);
 
-const data = await api_call.json;
+const data = await api_call.json();
 console.log(data);
 }
     render(){
