@@ -9,7 +9,7 @@ class Form extends React.Component{
             <div className = "form">
             <form onSubmit={this.props.getWeather} className = "form_elements">
                 <input type = "text" name = "city" placeholder="city" />
-                <input type = "text" name = "country" placeholder="country"/>
+                <input type = "text" name = "country" placeholder="country code eg: uk"/>
                 <button variant="success"> get weather</button>
             </form>
             </div>
