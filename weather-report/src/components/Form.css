@@ -1,0 +1,33 @@
+.form{
+
+    padding-top: 3%;
+    padding-left: 3%;
+}
+
+.form_elements{
+
+
+
+}
+
+input{
+    border-radius: 4px;
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #555;
+    margin-left: 1%;
+    margin-right: .5%;
+}
+
+button{
+
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}

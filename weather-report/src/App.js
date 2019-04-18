@@ -10,8 +10,7 @@ class App extends Component {
       <div className="App">
         <Navigationbar/>
         <Weather/>
-        <div className = "panel"></div>
-        <p> Weather report is below </p>
+
       </div>
     );
   }

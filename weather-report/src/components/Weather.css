@@ -1,0 +1,21 @@
+
+
+.weather_tabs ul{
+    position: center ;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 10%;
+    display: flex;
+  }
+  .weather_tabs li{
+    padding: 0 0.5rem;
+  }
+  .weather_tabs a{
+    color: white;
+    text-decoration: none;
+  }
+  .weather_tabs a:hover,
+  .weather_tabs a:active{
+    color: orange;
+  }

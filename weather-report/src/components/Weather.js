@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './Form'
-
+import './Weather.css'
 const APIKEY = "94147b45f9141cb471aa99afaba96549";
 class Weather extends React.Component{
 
@@ -41,15 +41,20 @@ getWeather = async (e) =>{
         return(
             <div>
        <Form getWeather={this.getWeather}/>
-       <p> city {this.state.city} </p>
-    <ul>
-       {this.state.data.map(item =>(
-        <li key="item.dt_txt">
-        Date: {item.dt_txt } | Temperature: {item.main.temp} | Humidity: {item.main.humidity} | weather: {item.weather[0].description} 
-        </li>
+<div class="card">
+<div class = "card-header">
+       <div class = "weather_tabs card-body">
+            <ul>
+            {this.state.data.map(item =>(
+                <li key="item.dt_txt">
+                Date: {(item.dt_txt).substring(0,10) } | Temp: {(item.main.temp -273.15).toFixed(2)}c | weather: {item.weather[0].description} 
+                </li>
 
-       ))}
-       </ul>
+            ))}
+            </ul>
+       </div>
+       </div>
+       </div>
             </div>
         )
     }
