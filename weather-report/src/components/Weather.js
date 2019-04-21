@@ -66,6 +66,10 @@ class Weather extends React.Component {
             return <img className="image" src="https://static1.squarespace.com/static/5899e78b1b10e35238fba886/t/5bd0e4ca4785d33f58ec3c1c/1540416755583/shutterstock_heavy+rain.jpg" alt="weather image" />
 
         }
+        else{
+            return <img className="image" src="https://images.pexels.com/photos/518415/pexels-photo-518415.jpeg" alt="weather image" />
+        }
+
 
     }
     render() {
@@ -75,10 +79,11 @@ class Weather extends React.Component {
                 <Form getWeather={this.getWeather} />
                 <div className="card">
 
-                    <div className="weather_tabs card-body">
+                    <div className="weather_tabs">
                         <ul>
                             {this.state.data.map(item => (
                                 <li key="item.dt_txt">
+                                <img className="image" src="https://images.pexels.com/photos/518415/pexels-photo-518415.jpeg" alt="weather image" />
                                     {this.weatherPhoto.bind(item.weather.id)}
                                     <br />
                                     Date: {(item.dt_txt).substring(0, 10)} <br /> Temp: {(item.main.temp - 273.15).toFixed(2)} c <br /> weather: {item.weather[0].description}

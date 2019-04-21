@@ -8,20 +8,13 @@
     padding-top: 10%;
     display: flex;
     margin-left: 3%;
-    padding-bottom: 3%;
-    
-    
+    padding-bottom: 3%;  
   }
   .weather_tabs li{
-    
-    padding: 0 0.5rem;
-  
-  }
+    padding: 0 1.5rem;
+   }
 
-  .weather_tabs a{
-    color: white;
-    text-decoration: none;
-  }
+
   .weather_tabs a:hover,
   .weather_tabs a:active{
     color: orange;
@@ -29,7 +22,7 @@
 
   .card {
     margin-top: 10%;
-    
+    box-shadow: 1pc;
     
     margin-left: 15%;
     margin-right: 20%;
