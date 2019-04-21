@@ -19,7 +19,6 @@ how to build:
   
   improvements which can be made: 
   
-     Dynamic picture selection based onvweather situation.
   
      Navbar buttons to funtion properly.
   
