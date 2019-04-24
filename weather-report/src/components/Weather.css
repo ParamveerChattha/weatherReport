@@ -3,10 +3,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    padding-top: 10%;
+    height: 50%;
     display: flex;
     margin-left: 3%;
-    padding-bottom: 3%;  
+    padding-top: 1%;
+    position: relative;
+
   }
   .weather_tabs li{
     padding: 0 1.5rem;
@@ -20,7 +22,6 @@
   .card {
     margin-top: 10%;
     box-shadow: 1pc;
-    
     margin-left: 15%;
     margin-right: 20%;
     margin-bottom: 10%;
@@ -43,6 +44,6 @@
       list-style: none;
     margin-right: 3%;
       display: flex;
-      margin-top: -55%;
+    
 
   }

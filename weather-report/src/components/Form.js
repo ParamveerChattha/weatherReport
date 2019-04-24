@@ -1,19 +1,21 @@
 import React from 'react';
-import './Form.css';
 
-
-class Form extends React.Component{
-
-    render(){
-        return(
-            <div className = "form">
-            <form onSubmit={this.props.getWeather} className = "form_elements">
-                <input type = "text" name = "city" placeholder="city" />
-                <input type = "text" name = "country" placeholder="country code eg: uk"/>
-                <button variant="success"> get weather</button>
-            </form>
+const Form = ()=>(
+  
+    <div className="container">
+        <div className="row">
+            <div className="col-md-6">
+                <h2 id="city">
+city:                
+                </h2>
+                <input id="city-value" placeholder = "city.." defaultValue = "Chandigarh" type = "text" readOnly/>
             </div>
-        )
-    }
-}
+            <div className="col-md-6">
+            <h2 id = "country"> country:    </h2>
+            <input id= "country-value" placeholder= "country.." defaultValue="IN" type ="text" readOnly/>
+            </div>
+        </div>
+    </div>
+
+);
 export default Form;

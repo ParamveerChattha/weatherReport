@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./App.css";
+import Form from "./components/Form";
 import Navigationbar from './components/Navigationbar.js';
 
 
@@ -9,6 +10,10 @@ class App extends Component {
     return (
       <div className="App">
         <Navigationbar/>
+        <div className="row">
+        <Form/>
+        </div>
+        
         <Weather/>
 
       </div>

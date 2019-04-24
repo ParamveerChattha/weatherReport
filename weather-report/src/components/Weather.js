@@ -1,49 +1,66 @@
 import React from 'react';
-import Form from './Form'
+import Details from '.components/Details.js'
 import './Weather.css'
 const APIKEY = "94147b45f9141cb471aa99afaba96549";
+
+
 class Weather extends React.Component {
 
-    state = {
-        data: [],
-        date: [],
-        city: undefined,
-        country: undefined,
-        humidity: [],
-        temperature: [],
-        description: [],
-        windSpeed: [],
-        error: undefined
-    }
-
+    state={
+        details: undefined,
+        error: undefined, 
+    };
     getWeather = async (e) => {
         e.preventDefault();
         const CITYNAME = e.target.elements.city.value;
         const COUNTRYCODE = e.target.elements.country.value;
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${CITYNAME},${COUNTRYCODE}&APPID=${APIKEY}`);
-        const dataJson = await api_call.json();
-        let temp = [];
-        for (let i = 0; i < dataJson.list.length; i += 8) {
-            temp.push(dataJson.list[i]);
-        }
-        this.setState({
-            data: temp
-        });
+        const data = await api_call.json();
 
+        for (let i = 0; i < data.list.length; i += 8) {
+        }
         console.log(this.state.data);
-        //    console.log(this.state.data[0]);
+        this.changeState(data)
     }
+    changeState(data){
+
+        this.setState({
+            details: data.list.map(item =>({
+                humidity: item.main.humidity,
+                temp: item.main.temp,
+                weather: item.weather[0],
+            })),
+
+             error: undefined,
+        });
+         this.renderForecast();   
+        }
+        renderForeCast(){
+            const {details} = this.state;
+            return details.map(element =>(
+                <Details
+                key = {element.dt}
+                date={element.dt}
+                temp={element.temp}
+                weather={element.weather}
+                humidity={element.humidity}
+
+                />
+
+
+
+
+            ));
+
+        }
+
+
     componentWillMount = async () => {
 
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=bangalore,IN&APPID=${APIKEY}`);
         const dataJson = await api_call.json();
-        let temp = [];
         for (let i = 0; i < dataJson.list.length; i += 8) {
-            temp.push(dataJson.list[i]);
         }
-        this.setState({
-            data: temp
-        });
 
         console.log(this.state.data);
         //    console.log(this.state.data[0]);
@@ -76,26 +93,10 @@ class Weather extends React.Component {
     }
     render() {
         return (
-            <div >
+            <div>
 
-                <Form getWeather={this.getWeather} />
-                <div className="card">
 
-                    <div className="weather_tabs">
-                        <ul>
-                            {this.state.data.map(item => (
-                                <li key="item.dt_txt">
-                                 
-                                {this.weatherPhoto(item)}
-                                    <br />
-                                    Date: {(item.dt_txt).substring(0, 10)} <br /> Temp: {(item.main.temp - 273.15).toFixed(2)} c <br /> weather: {item.weather[0].description}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
             </div>
-
         )
     }
 
