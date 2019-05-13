@@ -1,3 +1,11 @@
 .App{
     height: 100%;
 }
+
+.title-container{
+    height: 100vh;
+    background: url("./images/bg.png") center center no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: #eea;
+}

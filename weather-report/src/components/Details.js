@@ -1,17 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import 'owfont/css/owfont-regular.css';
 
-const Details = ({weather, date, humidity, temp,})=>{
+const Details = ({ 
+    weather, date, humidity, temp,
+ }) => {
     Details.prototype = {
         weather: PropTypes.instanceOf(Object).isRequired,
         date: PropTypes.instanceOf(Object).isRequired,
         humidity: PropTypes.string.isRequired,
         temp: PropTypes.string.isRequired,
     };
-    return(
-        <div>
-
-
+    return (
+        <div className="row weather-row">
+            <div className="col-md-2">
+                <div className={`owf owf-{weather.id}`} />
+                <br />
+                <span>
+                    {weather.main}
+                </span>
+            </div>
+            <div className="col-md-3">
+                <span>
+                    {Math.round(humidity)}
+                    <br />
+                    humidity
+                </span>
+            </div>
+            <div className="col-ms-3">
+                <span>
+                    {Math.round(temp)}
+                </span>
+            </div>
+            
         </div>
     )
 };
