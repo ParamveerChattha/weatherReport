@@ -16,7 +16,7 @@ const Details = ({
   return (
     <div className="row weather-row">
       <div className="col-md-2">
-      <p>testtstst </p>
+
         <div className={`owf owf-${weather.id}`} />
         <br />
         <span>
