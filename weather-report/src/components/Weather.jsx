@@ -16,13 +16,22 @@ class Weather extends Component {
       const city = 'Bengaluru';
       const country = 'IN';
       const apiCall = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`);
+
       const data = await apiCall.json();
-      this.changeState(data);
+
+      let tempData = [];
+      for (let i = 0; i < data.list.length; i += 8) {
+        tempData.push(data.list[i]);
+      }
+      const tempObj = Object.assign({}, tempData);
+      const tempObjJson = JSON.stringify(tempData);
+      console.log(tempData);
+      this.changeState(tempData);
     }
 
     changeState(data) {
       this.setState({
-        details: data.list.map(item => ({
+        details: data.map(item => ({
           date: moment(item.dt * 1000),
           temp: item.main.temp,
           humidity: item.main.humidity,
@@ -60,7 +69,7 @@ class Weather extends Component {
           <div className="loading">
             {error && (
             <p>
-Error in getting data, try again later.
+Error in retrieving data, try again later.
             </p>
             )}
             {<div className="spinner" />}
