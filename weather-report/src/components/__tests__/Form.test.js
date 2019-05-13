@@ -27,5 +27,10 @@ describe('Form Tests', () => {
     const wrapper = shallow(React.createElement(Form));
     expect(wrapper.find('#city-value').html()).toContain('Bengaluru');
   });
+  it('Form to have submit button', () => {
+    const wrapper = shallow(React.createElement(Form));
+    expect(wrapper.find('#submit-value').html());
+
+  });
 
 });
