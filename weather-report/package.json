@@ -27,9 +27,9 @@
     "env",
     "react"
   ],
-  "author": "Prabhsimran Singh<psharneja@gmail.com>",
+  "author": "Paramveer Singh Singh<paramveersingh08.92@gmail.com>",
   "license": "MIT",
-  "homepage": "https://psharneja.github.io/atmos/",
+  "homepage": "https://github.com/ParamveerChattha/weatherReport/",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^23.4.0",
