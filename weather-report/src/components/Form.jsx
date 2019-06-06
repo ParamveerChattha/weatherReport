@@ -1,11 +1,13 @@
 import React from 'react';
-
+import Weather from './Weather'
 class Form extends React.Component {
   state = {
-    city: '',
-    country: '',
+    city: 'Chandigarh',
+    country: 'IN',
     submit: false,
-
+    finalCity: 'Chandigarh',
+    finalCountry: 'IN'
+    
   }
 
   handleCity = (event) => {
@@ -19,20 +21,29 @@ class Form extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ submit: true });
-    console.log(this.state.city + ' ' + this.state.country + ' ' + this.state.submit);
+    this.updateState(this.state.city, this.state.country);
+    
+  }
+  updateState = (city, country) => {
+    console.log(city + ' ' + country + 'updateState');
+    this.setState({
+      finalCity: city,
+      finalCountry: country,
+      submit: false
+    });
   }
 
   render() {
     return (
       <div>
 
-        <div className="container-fluid">
+        <div className="container-fluid form">
           <div className="row">
             <div className="col-xs-5 well">
               <h2 id="city" className="content-container__heading">
                 City:
         </h2>
-              <input className="form-control" id="city-value well" type="input" defaultValue="Bengaluru" name="city" placeholder="City" onChange={this.handleCity} />
+              <input className="form-control" id="city-value well" type="input" defaultValue="Chandigarh" name="city" placeholder="City" onChange={this.handleCity} />
             </div>
             <div className="col-xs-5 well">
               <h2 id="country" className="content-container__heading">
@@ -46,6 +57,8 @@ class Form extends React.Component {
             </div>
           </div>
         </div>
+
+        <Weather city={this.state.finalCity} country={this.state.finalCountry} />
       </div>
     );
   }

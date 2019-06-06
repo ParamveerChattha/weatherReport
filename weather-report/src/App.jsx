@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Title from './components/Title';
-import Weather from './components/Weather';
+//import Weather from './components/Weather';
 import Form from './components/Form';
 
 
@@ -18,7 +18,7 @@ function App() {
               <Form />
             </div>
             <div className="row">
-              <Weather />
+              
             </div>
           </div>
         </div>

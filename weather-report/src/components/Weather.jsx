@@ -13,16 +13,25 @@ class Weather extends Component {
       country: 'IN',
     }
   }
-
-  componentDidMount() {
-    this.getWeatherForecast();
+  componentDidUpdate(){
+  if(this.state.city !== this.props.city){
     this.setState({
       city: this.props.city,
       country: this.props.country
     });
+    console.log(this.state.city + ' ' + this.state.country + 'from didUpdate');
+    this.getWeatherForecast();
+  }
+  
+  }
+
+  componentDidMount() {
+    this.getWeatherForecast();
+
   }
 
   getWeatherForecast = async () => {
+    console.log(this.state.city + 'from getWeatherForecast' );
     const apiCall = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},${this.state.country}&appid=${API_KEY}&units=metric`);
 
     const data = await apiCall.json();
