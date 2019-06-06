@@ -19,9 +19,9 @@ describe('Title Tests', () => {
     const wrapper = shallow(React.createElement(Title));
     expect(wrapper.find('p')).toHaveLength(1);
   });
-  it('Title to have a h1 tag values atmos', () => {
+  it('Title to have a h1 tag values weatherCheck', () => {
     const wrapper = shallow(React.createElement(Title));
-    expect(wrapper.find('h1').text()).toEqual('atmos');
+    expect(wrapper.find('h1').text()).toEqual('weatherCheck');
   });
   it('Title to have a p tag values \'the weather forecast app\'', () => {
     const wrapper = shallow(React.createElement(Title));
