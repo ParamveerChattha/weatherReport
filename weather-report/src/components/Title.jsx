@@ -3,10 +3,10 @@ import React from 'react';
 const Title = () => (
   <div>
     <h1 className="title-container__title">
-    weatherCheck
+      weatherCheck
     </h1>
     <p className="title-container__subtitle">
-the weather forecast app...
+      the weather forecast app...
     </p>
   </div>
 );
