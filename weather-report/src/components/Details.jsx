@@ -31,19 +31,19 @@ const Details = ({
       <div className="col-md-3">
         <span>
           {Math.round(humidity)}
-%
+          %
           <br />
-humidity
+          humidity
         </span>
       </div>
       <div className="col-md-3">
         <span>
           {Math.round(temp)}
           <sup>
-o
+            o
           </sup>
           <span>
-C
+            C
           </span>
         </span>
 
